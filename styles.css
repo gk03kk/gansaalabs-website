@@ -156,3 +156,5 @@ html{scroll-padding-top:90px}
 .hero h1 .gradient-text{text-shadow:none}
 #studio{padding-bottom:56px}
 #projects{padding-top:56px}
+@media(max-width:680px){.orbit-habit{left:-6%;top:0}.orbit-jar{left:auto;right:-6%;top:auto;bottom:0}.orbit-cook,.scene-coordinate{display:none}.ambient{display:none}*,*::before,*::after{animation:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}}
+@media(max-width:680px){.topbar,.topbar.scrolled{background:#fffdf8}}
