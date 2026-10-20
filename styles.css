@@ -154,3 +154,6 @@ html{scroll-padding-top:90px}
 @media(max-width:1000px){.happy-art>.habit-device{top:47%;transform:translateY(-50%) rotate(-3deg)!important}}
 @media(max-width:680px){.happy-art>.habit-device{top:47%;transform:translateY(-50%) rotate(-2deg)!important}}
 .hero h1 .gradient-text{text-shadow:none}
+.happy-art>.float-left{left:calc(6% + 262px);top:25%}
+@media(max-width:1000px){.happy-art>.float-left{left:calc(5% + 262px)}}
+@media(max-width:680px){.happy-art>.float-left{left:calc(3% + 170px);top:20%}}
