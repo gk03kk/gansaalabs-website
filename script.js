@@ -69,3 +69,17 @@ if ('IntersectionObserver' in window && !reducedMotion) {
   }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('.reveal, .section-head, .studio-grid, .projects-heading').forEach((element) => observer.observe(element));
 }
+
+// Pause animations and the story video in sections that are off screen.
+if ('IntersectionObserver' in window) {
+  const pauser = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle('is-offscreen', !entry.isIntersecting);
+      entry.target.querySelectorAll('video').forEach((video) => {
+        if (!entry.isIntersecting) video.pause();
+        else if (!reducedMotion) video.play().catch(() => {});
+      });
+    });
+  }, { rootMargin: '200px 0px' });
+  document.querySelectorAll('.hero, main > section, footer').forEach((section) => pauser.observe(section));
+}
