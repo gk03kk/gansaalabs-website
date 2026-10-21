@@ -83,3 +83,34 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '200px 0px' });
   document.querySelectorAll('.hero, main > section, footer').forEach((section) => pauser.observe(section));
 }
+
+// Share row: Instagram has no web share link, so it uses the phone's share menu
+// (or copies the link on a computer). "Copy link" always copies.
+const shareUrl = 'https://gansaalabs.com/';
+const shareText = 'Gansaa Labs: useful, considered apps for everyday life, including HappyHabit for families.';
+const shareStatus = document.querySelector('.share-status');
+let shareStatusTimer;
+const showShareStatus = (message) => {
+  if (!shareStatus) return;
+  shareStatus.textContent = message;
+  clearTimeout(shareStatusTimer);
+  shareStatusTimer = setTimeout(() => { shareStatus.textContent = ''; }, 4000);
+};
+const copyShareLink = async (message) => {
+  try {
+    await navigator.clipboard.writeText(shareUrl);
+    showShareStatus(message);
+  } catch {
+    window.prompt('Copy this link:', shareUrl);
+  }
+};
+document.querySelector('[data-share-native]')?.addEventListener('click', async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: 'Gansaa Labs', text: shareText, url: shareUrl });
+    } catch { /* closed the share menu */ }
+  } else {
+    copyShareLink('Link copied. Paste it into Instagram.');
+  }
+});
+document.querySelector('[data-share-copy]')?.addEventListener('click', () => copyShareLink('Link copied.'));

@@ -178,3 +178,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .project-card,.category-card,.project-art:before,.hero:after{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 .is-offscreen,.is-offscreen *,.is-offscreen *::before,.is-offscreen *::after{animation-play-state:paused!important}
 @media(max-width:1100px){.hero-scene{margin-top:100px}.orbit-habit{left:-6%;top:-50px}.orbit-jar{left:auto;right:-6%;top:10px;bottom:auto}.orbit-cook{display:flex;left:-6%;right:auto;top:auto;bottom:0}.cross-a{display:none}}
+.share-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin:34px 0 6px}
+.share-label{font:11px var(--mono);letter-spacing:1.4px;color:#72664f}
+.share-buttons{display:flex;flex-wrap:wrap;gap:10px}
+.share-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:1px solid #a789c34d;background:#fffdf8;color:#3d2800;cursor:pointer;padding:0;box-shadow:0 6px 16px #5e48201a;transition:transform .2s,box-shadow .2s,border-color .2s}
+.share-btn svg{width:20px;height:20px}
+.share-btn:hover,.share-btn:focus-visible{transform:translateY(-2px);box-shadow:0 10px 22px #5e48202e;border-color:#a789c3}
+.share-whatsapp{color:#25D366}.share-linkedin{color:#0A66C2}.share-facebook{color:#0866FF}.share-instagram{color:#E4405F}.share-copy{color:#7956a8}
+.share-status{flex-basis:100%;min-height:16px;font:11px var(--mono);letter-spacing:.6px;color:#5f8a2f}
